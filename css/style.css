@@ -1,0 +1,5 @@
+body { background-color: #bacfd1; margin: 0 auto; width: 500px; }
+
+button { width: 200px; height: 30px; border-radius: 20px; display: block; text-align: center; margin: 100px auto; background-color: #d89eb3; }
+
+p { text-align: center; border: 2px solid none; border-radius: 10px; background-color: #3494d8; padding: 10px; }
