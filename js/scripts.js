@@ -1,26 +1,17 @@
-var prefix = "https://cors-anywhere.herokuapp.com/";
 var url = 'http://api.icndb.com/jokes/random';
+var button = document.getElementById('get-joke');
+getJoke();
+button.addEventListener('click', getJoke);
+var paragraph = document.getElementById('joke');
 
 function getJoke() {
-$.ajax({
-	method: 'GET',
-	url: prefix + url,
-	success: function(res) {
-		$paragraph.text(res.value.joke);
-	}
-});	
+	var xhr = new XMLHttpRequest();
+	xhr.open('GET', url);
+	xhr.addEventListener('load', function() {
+		var response = JSON.parse(xhr.response);
+		paragraph.innerHTML = response.value.joke;
+	});
+	xhr.send();
 }
-
-getJoke();
-
-var $button = $('#get-joke').click(function() {
-$.ajax({
-	method: 'GET',
-	url: prefix + url,
-	success: function(res) {
-		$paragraph.text(res.value.joke);
-	}
-});
-});
-var $paragraph = $('#joke');
-
+var paragraph = document.getElementById('joke');
+var paragraph = document.getElementById('joke');
